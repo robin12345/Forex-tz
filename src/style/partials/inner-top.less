@@ -1,0 +1,72 @@
+.inner-top {
+
+  label {
+    font-family: arial, sans-serif;
+    font-size: 0.8em;
+    display: inline-block;
+    width: 50%;
+  }
+
+  input::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  .row:first-child {
+    padding-bottom: 8px;
+  }
+
+  #sum {
+    width: 128px;
+    font-size: 0.8em;
+    padding: 4px 7px;
+  }
+
+  #multi {
+    font-size: 0.8em;
+    padding: 4px 7px;
+    width: 50px;
+  }
+
+  .total {
+    font-size: 0.8em;
+    color: #909294;
+    display: inline-block;
+    position: relative;
+    width: 73px;
+
+    .wrap_sum {
+      display: inline-block;
+      position: absolute;
+      right: 0;
+    }
+
+    .eq {
+      padding: 0;
+    }
+  }
+
+  .pre-input {
+    position: absolute;
+    z-index: 1;
+    padding: 0 8px;
+
+
+    .icon-dollar:before{
+      line-height: 25px;
+      content: "$";
+      font-size: 0.8em;
+      color: #AAAAAA;
+      font-family: arial, sans-serif;
+      font-style: normal;
+    }
+
+    .icon-x:before{
+      line-height: 25px;
+      content: "\2715";
+      font-size: 0.5em;
+      color: #6E6E6E;
+      font-family: arial, sans-serif;
+      font-style: normal;
+    }
+  }
+}

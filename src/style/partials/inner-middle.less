@@ -1,0 +1,219 @@
+.inner-middle {
+  padding-top: 35px;
+  min-height: 145px;
+
+  .confines {
+    &.open {
+      display: none;
+    }
+
+    .type {
+      font-family: arial, sans-serif;
+      font-size: 0.8em;
+      display: inline-block;
+      width: 50%;
+    }
+
+    input[type=radio],
+    input[type=checkbox]
+    {
+      display: none;
+    }
+
+    input[type=text]{
+      width: 128px;
+      padding: 4px 7px;
+      font-size: .8em;
+    }
+
+    .pre-input {
+      position: absolute;
+      z-index: 1;
+      padding: 0 8px;
+
+
+      .icon-dollar:before{
+        line-height: 25px;
+        content: "$";
+        font-size: 0.8em;
+        color: #AAAAAA;
+        font-family: arial, sans-serif;
+        font-style: normal;
+      }
+
+      .icon-percent:before{
+        line-height: 25px;
+        content: "%";
+        font-size: 0.8em;
+        color: #AAAAAA;
+        font-family: arial, sans-serif;
+        font-style: normal;
+      }
+    }
+
+    input[type=radio] + label {
+      background: url(../img/tpl/radio-clear.png) no-repeat scroll 0 0;
+      cursor: pointer;
+      padding-left: 21px;
+    }
+
+    input[type=radio]:checked + label {
+      background: url(../img/tpl/radio-checked.png) no-repeat scroll 0 0;
+    }
+
+    input[type=checkbox] + label {
+      background: url(../img/tpl/uncheck.png) no-repeat scroll 0 0;
+      cursor: pointer;
+      padding-left: 24px;
+    }
+
+    input[type=checkbox]:checked + label {
+      background: url(../img/tpl/check.png) no-repeat scroll 0 0;
+    }
+
+    .row:first-child {
+      line-height: 16px;
+      padding-bottom: 13px;
+      label{
+        width: initial;
+        font-family: arial, sans-serif;
+        font-size: 0.8em;
+        display: inline-block;
+        padding-right: 10px;
+      }
+    }
+
+    .row {
+      padding-bottom: 8px;
+      .pick {
+        display: inline-block;
+        line-height: 17px;
+        font-family: arial, sans-serif;
+        font-size: 0.8em;
+      }
+      .param {
+        width: 50%;
+        display: inline-block;
+      }
+    }
+
+    .wrap {
+      display: inline-block;
+      position: relative;
+
+      input[type=text] {
+        padding: 4px 25px 4px 7px;
+      }
+
+      &.close {
+        opacity: 0.5;
+      }
+
+      .btn-group {
+        position: absolute;
+        display: inline-block;
+        box-sizing: border-box;
+        width: 17px;
+        height: 25px;
+        top: 0;
+        right: 0;
+
+        .btn-arrow {
+          position: absolute;
+          z-index: 1;
+          right: 4px;
+
+          &.ar-down {
+            top: 3px;
+          }
+
+          &.ar-up {
+            top: 4px;
+          }
+
+          .icon-btn-arrow-down {
+            .sprite(@btn-down);
+            display: block;
+          }
+
+          .icon-btn-arrow-up {
+            .sprite(@btn-up);
+            display: block;
+          }
+        }
+
+        button{
+          text-transform: none;
+          box-sizing: border-box;
+          overflow: hidden;
+          display: block;
+          height: 12px;
+          width: 17px;
+          border: 1px solid #c0c2c4;
+          position: relative;
+        }
+
+        button:focus {
+          outline-style: none;
+        }
+
+        .btn-up:active {
+          background: linear-gradient(to bottom, #a2a2a2, #fff);
+        }
+
+        .btn-down:active {
+          background: linear-gradient(to bottom, #fff, #a2a2a2);
+        }
+
+        .btn-up {
+          border-top-right-radius: 3px;
+          border-top-left-radius: 3px;
+          border-bottom: none;
+          background: linear-gradient(to bottom, #fff, #f8f9fa);
+        }
+
+        .btn-down {
+          border-bottom-right-radius: 3px;
+          border-bottom-left-radius: 3px;
+          background: linear-gradient(to bottom, #f6f7f8, #f1f3f5);
+        }
+      }
+    }
+  }
+
+  .wrapper {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    font-size: 0.8em;
+    color: #909294;
+    margin-bottom: 18px;
+
+    .pre-arrow {
+      position: absolute;
+      z-index: 1;
+      top: 5px;
+      left: -15px;
+
+      .icon-arrow {
+        .sprite(@arrow-open);
+        display: block;
+      }
+    }
+
+    &.open {
+
+      .pre-arrow {
+        position: absolute;
+        z-index: 1;
+        top: 2px;
+        left: -12px;
+
+        .icon-arrow {
+          .sprite(@arrow-close);
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "forex-tz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-less": "^3.0.5",
+    "gulp-minify-css": "*",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*",
+    "gulp-watch": "^4.3.5",
+    "imagemin-pngquant": "^4.2.0",
+    "rimraf": "*"
+  },
+  "author": "Andrushkov Konstantin",
+  "devDependencies": {
+    "gulp.spritesmith": "^5.0.1",
+    "merge-stream": "^1.0.0"
+  }
+}

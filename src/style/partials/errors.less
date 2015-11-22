@@ -1,0 +1,41 @@
+.row {
+  &.error_r {
+    position: relative;
+  }
+}
+
+.error {
+  display: none;
+  padding: 4px 8px;
+  border-radius: 3px;
+  line-height: 16px;
+  box-sizing: border-box;
+  position: absolute;
+  font-size: .7em;
+  width: 128px;
+  color: #fff;
+  height: 43px;
+  background-color: #e64545;
+  top: -48px;
+  right: 0;
+  z-index: 10;
+
+  &.sum_e {
+    .dotted {
+      border-bottom: 1px dotted #fff;
+    }
+  }
+
+  &.multi_e {
+
+  }
+}
+
+.error::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  bottom: -8px;
+  border: 4px solid transparent;
+  border-top: 4px solid #e64545;
+}

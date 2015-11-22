@@ -1,0 +1,161 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+@arrow-close-name: 'arrow-close';
+@arrow-close-x: 20px;
+@arrow-close-y: 16px;
+@arrow-close-offset-x: -20px;
+@arrow-close-offset-y: -16px;
+@arrow-close-width: 6px;
+@arrow-close-height: 9px;
+@arrow-close-total-width: 41px;
+@arrow-close-total-height: 27px;
+@arrow-close-image: '../sprite/sprite.png';
+@arrow-close: 20px 16px -20px -16px 6px 9px 41px 27px '../sprite/sprite.png' 'arrow-close';
+@arrow-down-name: 'arrow-down';
+@arrow-down-x: 0px;
+@arrow-down-y: 16px;
+@arrow-down-offset-x: 0px;
+@arrow-down-offset-y: -16px;
+@arrow-down-width: 10px;
+@arrow-down-height: 11px;
+@arrow-down-total-width: 41px;
+@arrow-down-total-height: 27px;
+@arrow-down-image: '../sprite/sprite.png';
+@arrow-down: 0px 16px 0px -16px 10px 11px 41px 27px '../sprite/sprite.png' 'arrow-down';
+@arrow-open-name: 'arrow-open';
+@arrow-open-x: 32px;
+@arrow-open-y: 0px;
+@arrow-open-offset-x: -32px;
+@arrow-open-offset-y: 0px;
+@arrow-open-width: 9px;
+@arrow-open-height: 6px;
+@arrow-open-total-width: 41px;
+@arrow-open-total-height: 27px;
+@arrow-open-image: '../sprite/sprite.png';
+@arrow-open: 32px 0px -32px 0px 9px 6px 41px 27px '../sprite/sprite.png' 'arrow-open';
+@arrow-up-name: 'arrow-up';
+@arrow-up-x: 10px;
+@arrow-up-y: 16px;
+@arrow-up-offset-x: -10px;
+@arrow-up-offset-y: -16px;
+@arrow-up-width: 10px;
+@arrow-up-height: 11px;
+@arrow-up-total-width: 41px;
+@arrow-up-total-height: 27px;
+@arrow-up-image: '../sprite/sprite.png';
+@arrow-up: 10px 16px -10px -16px 10px 11px 41px 27px '../sprite/sprite.png' 'arrow-up';
+@btn-down-name: 'btn-down';
+@btn-down-x: 32px;
+@btn-down-y: 6px;
+@btn-down-offset-x: -32px;
+@btn-down-offset-y: -6px;
+@btn-down-width: 7px;
+@btn-down-height: 5px;
+@btn-down-total-width: 41px;
+@btn-down-total-height: 27px;
+@btn-down-image: '../sprite/sprite.png';
+@btn-down: 32px 6px -32px -6px 7px 5px 41px 27px '../sprite/sprite.png' 'btn-down';
+@btn-up-name: 'btn-up';
+@btn-up-x: 32px;
+@btn-up-y: 11px;
+@btn-up-offset-x: -32px;
+@btn-up-offset-y: -11px;
+@btn-up-width: 7px;
+@btn-up-height: 5px;
+@btn-up-total-width: 41px;
+@btn-up-total-height: 27px;
+@btn-up-image: '../sprite/sprite.png';
+@btn-up: 32px 11px -32px -11px 7px 5px 41px 27px '../sprite/sprite.png' 'btn-up';
+@radio-checked-name: 'radio-checked';
+@radio-checked-x: 0px;
+@radio-checked-y: 0px;
+@radio-checked-offset-x: 0px;
+@radio-checked-offset-y: 0px;
+@radio-checked-width: 16px;
+@radio-checked-height: 16px;
+@radio-checked-total-width: 41px;
+@radio-checked-total-height: 27px;
+@radio-checked-image: '../sprite/sprite.png';
+@radio-checked: 0px 0px 0px 0px 16px 16px 41px 27px '../sprite/sprite.png' 'radio-checked';
+@radio-clear-name: 'radio-clear';
+@radio-clear-x: 16px;
+@radio-clear-y: 0px;
+@radio-clear-offset-x: -16px;
+@radio-clear-offset-y: 0px;
+@radio-clear-width: 16px;
+@radio-clear-height: 16px;
+@radio-clear-total-width: 41px;
+@radio-clear-total-height: 27px;
+@radio-clear-image: '../sprite/sprite.png';
+@radio-clear: 16px 0px -16px 0px 16px 16px 41px 27px '../sprite/sprite.png' 'radio-clear';
+@spritesheet-width: 41px;
+@spritesheet-height: 27px;
+@spritesheet-image: '../sprite/sprite.png';
+@spritesheet-sprites: @arrow-close @arrow-down @arrow-open @arrow-up @btn-down @btn-up @radio-checked @radio-clear;
+@spritesheet: 41px 27px '../sprite/sprite.png' @spritesheet-sprites;
+
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+*/
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: extract(@sprite, 9);
+  @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
+  background-image: url(@sprite-image-bare);
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: e(extract(@sprite, 10));
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
+}
